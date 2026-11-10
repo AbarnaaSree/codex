@@ -456,7 +456,7 @@ impl LocalProcess {
                 ) {
                     process_map.remove(&process_id);
                 }
-                return Err(internal_error(err.to_string()));
+                return Err(internal_error(format!("{err:#}")));
             }
         };
         let metrics = self.inner.telemetry.process_started(&process_id);
